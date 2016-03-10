@@ -2,10 +2,13 @@
 import requests
 import ConfigParser
 import sys
+import os
 
 def main():
+	#If you don't want to use a config file, hardcode your host and port and comment out config lines
+    fpath = os.path.join(os.path.dirname(__file__), 'config.ini')
     config = ConfigParser.ConfigParser()
-    config.read('config.ini')
+    config.read(fpath)
     host = config.get('hdfs_env', 'host')
     port = config.get('hdfs_env', 'port')
     if (not host or not port):
@@ -20,7 +23,8 @@ def main():
     result = r.json()
     status_list = result['FileStatuses']
     for status in status_list['FileStatus']:
-    	print(status['owner'] + status['type'] + ' ' + status['pathSuffix'])
+    	# print(status['owner'] + '\t' + status['type'] + '\t' + status['pathSuffix'])
+    	print(status['pathSuffix'])
 
 
 
