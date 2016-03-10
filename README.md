@@ -16,3 +16,4 @@ Or, install it in your bin directory and call
 ```
 pydfs.py 'YOUR_DIRECTORY_HERE'
 ```
+Note: the config file is optional. It is very easy to change the original script to not use it.
