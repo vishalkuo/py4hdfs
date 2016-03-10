@@ -1,4 +1,4 @@
-# pydfs
+# py4hdfs
 Quickly list contents of directories using a webhdfs wrapper
 
 ## About
